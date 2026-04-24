@@ -1,4 +1,4 @@
-#include "tiktok_live.h"
+#include "fliptok_live_chat.h"
 #include "helpers/ble_serial.h"
 
 static const uint8_t tiktok_logo_bits[] = {
@@ -344,7 +344,7 @@ static uint16_t bt_serial_callback(SerialServiceEvent event, void* ctx) {
     return 0;
 }
 
-static TikTokApp* tiktok_live_alloc() {
+static TikTokApp* fliptok_live_chat_alloc() {
     TikTokApp* app = malloc(sizeof(TikTokApp));
 
     app->view_port = view_port_alloc();
@@ -368,7 +368,7 @@ static TikTokApp* tiktok_live_alloc() {
     return app;
 }
 
-static void tiktok_live_free(TikTokApp* app) {
+static void fliptok_live_chat_free(TikTokApp* app) {
     gui_remove_view_port(app->gui, app->view_port);
     view_port_free(app->view_port);
     furi_message_queue_free(app->event_queue);
@@ -378,9 +378,9 @@ static void tiktok_live_free(TikTokApp* app) {
     free(app);
 }
 
-int32_t tiktok_live_app(void* p) {
+int32_t fliptok_live_chat_app(void* p) {
     UNUSED(p);
-    TikTokApp* app = tiktok_live_alloc();
+    TikTokApp* app = fliptok_live_chat_alloc();
 
     view_port_update(app->view_port);
     furi_delay_ms(2500);
@@ -455,7 +455,7 @@ int32_t tiktok_live_app(void* p) {
     bt_keys_storage_set_default_path(app->bt);
     furi_check(bt_profile_restore_default(app->bt));
 
-    tiktok_live_free(app);
+    fliptok_live_chat_free(app);
 
     FURI_LOG_I(TAG, "FlipTok Live closed");
     return 0;

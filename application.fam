@@ -1,8 +1,8 @@
 App(
-    appid="tiktok_live",
+    appid="fliptok_live_chat",
     name="FlipTok Live",
     apptype=FlipperAppType.EXTERNAL,
-    entry_point="tiktok_live_app",
+    entry_point="fliptok_live_chat_app",
     requires=["bt", "gui"],
     stack_size=2 * 1024,
     fap_description="Display FlipTok Live chat on Flipper Zero",

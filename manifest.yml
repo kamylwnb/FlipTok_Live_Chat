@@ -15,6 +15,6 @@ description: |
 changelog: "@CHANGELOG.md"
 
 screenshots:
-  - screenshots/1.png
-  - screenshots/2.png
-  - screenshots/3.png
+  - screenshots/splash.png
+  - screenshots/waiting.png
+  - screenshots/chat.png

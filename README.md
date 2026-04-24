@@ -3,9 +3,9 @@
 ## Real-time FlipTok Live Chat Monitor for Flipper Zero
 
 <div align="center">
-    <img src="screenshots/1.png" alt="Screenshot 1" width="250">
-    <img src="screenshots/2.png" alt="Screenshot 2" width="250">
-    <img src="screenshots/3.png" alt="Screenshot 3" width="250">
+    <img src="screenshots/splash.png" alt="Screenshot 1" width="250">
+    <img src="screenshots/waiting.png" alt="Screenshot 2" width="250">
+    <img src="screenshots/chat.png" alt="Screenshot 3" width="250">
 </div>
 
 Display your TikTok Live chat, gifts, and follows in real-time on your Flipper Zero via Bluetooth Low Energy (BLE). The Python server runs on your PC, connects to the TikTok Live stream, and forwards all events to the Flipper Zero wirelessly.

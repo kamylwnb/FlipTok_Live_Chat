@@ -65,10 +65,10 @@ Display your TikTok Live chat, gifts, and follows in real-time on your Flipper Z
 Navigate to the flipperzero-firmware directory and compile:
 
 ```bash
-./fbt COMPACT=1 DEBUG=0 launch APPSRC=applications_user/tiktok_live
+./fbt COMPACT=1 DEBUG=0 launch APPSRC=applications_user/fliptok_live_chat
 ```
 
-Or manually copy the compiled `.fap` file from `build/f7-firmware-C/.extapps/tiktok_live.fap` to `/ext/apps/Bluetooth/` on your Flipper Zero.
+Or manually copy the compiled `.fap` file from `build/f7-firmware-C/.extapps/fliptok_live_chat.fap` to `/ext/apps/Bluetooth/` on your Flipper Zero.
 
 **2. Run the Python Server**
 
@@ -128,7 +128,7 @@ TikTok Servers
 tiktok_server_gui.py  <-- runs on your PC
       |
       v  (BLE / Bluetooth serial)
-Flipper Zero  <-- tiktok_live FAP
+Flipper Zero  <-- fliptok_live_chat FAP
 ```
 
 ## Technical Specifications
@@ -136,20 +136,18 @@ Flipper Zero  <-- tiktok_live FAP
 BLE Protocol (83-byte packet):
 
 ```c
-#pragma pack(push, 1)
-typedef struct {
+typedef struct __attribute__((packed)) {
     uint8_t type;              // 0=chat, 1=like, 2=gift, 3=follow
     char    username[17];      // null-terminated, max 16 chars
     char    message[65];       // null-terminated, max 64 chars
-} TikTokMessage;
-#pragma pack(pop)
+} FlipTokMessage;
 ```
 
 BLE:
 
 * Service UUID: `8fe5b3d5-2e7f-4a98-2a48-7acc60fe0000`
 * RX UUID: `19ed82ae-ed21-4c9d-4145-228e62fe0000`
-* Device name prefix: `TikTok`
+* Device name prefix: `FlipTok`
 
 Screen layout (128x64 px):
 
@@ -166,7 +164,7 @@ Performance:
 
 ## Troubleshooting
 
-* **Flipper not found** - Ensure TikTok Live app is running on Flipper, check PC Bluetooth is enabled
+* **Flipper not found** - Ensure FlipTok Live app is running on Flipper, check PC Bluetooth is enabled
 * **TikTok connection error** - Try adding a free EulerStream API key at eulerstream.com
 * **Messages not appearing** - Check that the username is correct and the stream is currently live
 * **Garbled characters** - Non-ASCII characters (emoji, accented letters) are automatically transliterated or replaced with `?`

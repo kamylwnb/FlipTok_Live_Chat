@@ -1,6 +1,6 @@
-# TikTok Live Chat - Flipper Zero Display
+# FlipTok Live - Flipper Zero Display
 
-## Real-time TikTok Live Chat Monitor for Flipper Zero
+## Real-time FlipTok Live Chat Monitor for Flipper Zero
 
 <div align="center">
     <img src="screenshots/1.png" alt="Screenshot 1" width="250">
@@ -80,7 +80,7 @@ Dependencies (`TikTokLive`, `bleak`) are installed automatically on first run.
 
 **3. Connect**
 
-1. On Flipper: open **TikTok Live** app — it starts advertising as `TikTok XXXX`
+1. On Flipper: open **FlipTok Live** app — it starts advertising as `FlipTok XXXX`
 2. In the Python GUI: enter the TikTok username (without `@`) and click **START**
 3. The server scans for the Flipper, connects via BLE, then joins the live stream
 4. Messages appear on the Flipper screen in real-time
@@ -89,7 +89,7 @@ Dependencies (`TikTokLive`, `bleak`) are installed automatically on first run.
 
 **On Flipper Zero:**
 
-1. Navigate to: Apps -> Bluetooth -> TikTok Live
+1. Navigate to: Apps -> Bluetooth -> FlipTok Live
 2. Splash screen shows for 2.5 seconds
 3. Status shows "Waiting for connection..."
 4. LED and beep on every new event

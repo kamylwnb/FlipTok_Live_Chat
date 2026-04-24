@@ -78,7 +78,7 @@ static void draw_splash_screen(Canvas* canvas) {
     canvas_draw_xbm(canvas, 8, 16, 32, 32, tiktok_logo_bits);
 
     canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str(canvas, 50, 24, "TikTok");
+    canvas_draw_str(canvas, 50, 24, "FlipTok");
     canvas_draw_str(canvas, 50, 36, "Live Chat");
 
     canvas_set_font(canvas, FontSecondary);
@@ -88,7 +88,7 @@ static void draw_splash_screen(Canvas* canvas) {
 static void draw_waiting_screen(Canvas* canvas) {
     canvas_clear(canvas);
     canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str_aligned(canvas, 64, 20, AlignCenter, AlignCenter, "TikTok Live");
+    canvas_draw_str_aligned(canvas, 64, 20, AlignCenter, AlignCenter, "FlipTok Live");
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str_aligned(canvas, 64, 36, AlignCenter, AlignCenter, "Waiting for");
     canvas_draw_str_aligned(canvas, 64, 46, AlignCenter, AlignCenter, "connection...");
@@ -177,7 +177,7 @@ static void draw_chat_view(Canvas* canvas, TikTokApp* app) {
     canvas_draw_box(canvas, 0, 0, SCREEN_W, HEADER_H);
     canvas_set_color(canvas, ColorWhite);
     canvas_set_font(canvas, FontSecondary);
-    canvas_draw_str_aligned(canvas, 64, 1, AlignCenter, AlignTop, "TikTok Live Chat");
+    canvas_draw_str_aligned(canvas, 64, 1, AlignCenter, AlignTop, "FlipTok Live Chat");
     canvas_set_color(canvas, ColorBlack);
 
     if(app->msgs.count == 0) {
@@ -389,7 +389,7 @@ int32_t tiktok_live_app(void* p) {
 
     bt_disconnect(app->bt);
     furi_delay_ms(200);
-    bt_keys_storage_set_storage_path(app->bt, APP_DATA_PATH(".bt_tiktok.keys"));
+    bt_keys_storage_set_storage_path(app->bt, APP_DATA_PATH(".bt_fliptok.keys"));
 
     BleProfileSerialParams params = {
         .device_name_prefix = "TikTok",
@@ -405,7 +405,7 @@ int32_t tiktok_live_app(void* p) {
     furi_hal_bt_start_advertising();
     app->bt_state = BtStateWaiting;
 
-    FURI_LOG_I(TAG, "BLE advertising started, device name prefix: TikTok");
+    FURI_LOG_I(TAG, "BLE advertising started, device name prefix: FlipTok");
 
     InputEvent event;
     uint32_t last_render = 0;
@@ -457,6 +457,6 @@ int32_t tiktok_live_app(void* p) {
 
     tiktok_live_free(app);
 
-    FURI_LOG_I(TAG, "TikTok Live closed");
+    FURI_LOG_I(TAG, "FlipTok Live closed");
     return 0;
 }

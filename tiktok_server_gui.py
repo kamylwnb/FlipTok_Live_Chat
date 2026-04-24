@@ -61,7 +61,7 @@ MSG_TYPE_FOLLOW = 3
 
 SERIAL_SERVICE_UUID = "8fe5b3d5-2e7f-4a98-2a48-7acc60fe0000"
 SERIAL_RX_CHAR_UUID = "19ed82ae-ed21-4c9d-4145-228e62fe0000"
-DEVICE_NAME_PREFIX  = "TikTok"
+DEVICE_NAME_PREFIX  = "FlipTok"
 
 CONFIG_FILE = "tiktok_server_config.json"
 
@@ -104,7 +104,7 @@ def build_packet(msg_type: int, username: str, message: str) -> bytes:
 class TikTokServerGUI:
     def __init__(self, root: Tk):
         self.root = root
-        self.root.title("TikTok Live → Flipper Zero")
+        self.root.title("FlipTok Live → Flipper Zero")
         self.root.geometry("520x800")
         self.root.resizable(False, False)
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
@@ -135,7 +135,7 @@ class TikTokServerGUI:
 
         info = Frame(header, bg="#010101")
         info.pack(side=LEFT, fill=Y, pady=10)
-        Label(info, text="TikTok Live", font=("Arial", 18, "bold"), bg="#010101", fg="white").pack(anchor=W)
+        Label(info, text="FlipTok Live", font=("Arial", 18, "bold"), bg="#010101", fg="white").pack(anchor=W)
         Label(info, text="Chat → Flipper Zero", font=("Arial", 11), bg="#010101", fg="#69c9d0").pack(anchor=W)
         Label(info, text="by Dr.Mosfet", font=("Arial", 9), bg="#010101", fg="#888").pack(anchor=W)
 
@@ -228,7 +228,7 @@ class TikTokServerGUI:
         row3.pack(fill=X, padx=6, pady=(0, 6))
         Button(row3, text="▶ Test TTS", font=("Arial", 9),
                bg="#555", fg="white",
-               command=lambda: self._speak("Hello! TikTok Live is working. Comments will be read aloud.")).pack(side=LEFT, padx=2)
+               command=lambda: self._speak("Hello! FlipTok Live is working. Comments will be read aloud.")).pack(side=LEFT, padx=2)
 
         self.root.after(500, self._refresh_voices)
 

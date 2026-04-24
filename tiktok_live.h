@@ -10,7 +10,7 @@
 #include <input/input.h>
 #include <storage/storage.h>
 
-#define TAG                   "TikTokLive"
+#define TAG                   "FlipTokLive"
 #define BT_SERIAL_BUFFER_SIZE 256
 
 #define MAX_MESSAGES 8

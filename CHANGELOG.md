@@ -20,11 +20,11 @@
 
 ### Added
 - Initial release
-- Real-time TikTok Live chat display on Flipper Zero via BLE
+- Real-time FlipTok Live chat display on Flipper Zero via BLE
 - Chat, gift, follow event handling
 - LED and sound notifications per event type
 - Scrollable message history (8 messages circular buffer)
-- Splash screen with TikTok logo
+- Splash screen with FlipTok logo
 - Python GUI server with auto-dependency installation
 - EulerStream API key support
 - Auto-reconnect on BLE disconnect

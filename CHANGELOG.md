@@ -2,7 +2,7 @@
 
 ## [1.1.0] - 2026-04-24
 
-### Added
+**Added**
 - Word-wrap for long chat messages using screen math (128x64 px)
 - Up to 6 line slots visible at once (FontKeyboard 8px height)
 - Optional "Send to Flipper Zero" checkbox - monitor TikTok chat without the device
@@ -12,13 +12,13 @@
 - 3-second backlog discard on TikTok connect
 - Letter T icon (10x10 px)
 
-### Changed
+**Changed**
 - Removed all developer comments from source files
 - Config file (tiktok_server_config.json) excluded from git via .gitignore
 
 ## [1.0.0] - 2026-04-01
 
-### Added
+**Added**
 - Initial release
 - Real-time FlipTok Live chat display on Flipper Zero via BLE
 - Chat, gift, follow event handling

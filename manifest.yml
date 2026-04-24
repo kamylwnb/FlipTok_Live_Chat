@@ -5,7 +5,7 @@ sourcecode:
   type: git
   location:
     origin: https://github.com/kamylwnb/FlipTok_Live_Chat
-    commit_sha: b5d9df710874f2843f34fa27320fc1f25d069f29
+    commit_sha: ec66a72c550a8ac12ce296a32794499d395ebfc2
 
 short_description: "FlipTok Live chat display on Flipper Zero via Bluetooth"
 

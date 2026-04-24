@@ -392,7 +392,7 @@ int32_t tiktok_live_app(void* p) {
     bt_keys_storage_set_storage_path(app->bt, APP_DATA_PATH(".bt_fliptok.keys"));
 
     BleProfileSerialParams params = {
-        .device_name_prefix = "TikTok",
+        .device_name_prefix = "FlipTok",
         .mac_xor = 0x0007,
     };
 
